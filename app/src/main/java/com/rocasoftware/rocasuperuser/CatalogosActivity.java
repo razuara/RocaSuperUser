@@ -18,6 +18,7 @@ public class CatalogosActivity extends AppCompatActivity {
 
         sexoCardView = findViewById(R.id.sexoCardView);
         estadosCardView = findViewById(R.id.estadosCardView);
+        ciudadesCardView = findViewById(R.id.ciudadesCardView);
 
 
 
@@ -34,6 +35,15 @@ public class CatalogosActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(CatalogosActivity.this,EstadosActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        ciudadesCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CatalogosActivity.this,CiudadesActivity.class);
                 startActivity(intent);
                 finish();
             }
