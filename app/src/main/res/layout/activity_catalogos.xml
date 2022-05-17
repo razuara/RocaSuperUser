@@ -1,9 +1,222 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CatalogosActivity">
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/myToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background2">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="47dp"
+                android:layout_height="59dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@mipmap/super_logo" />
+
+            <TextView
+                android:id="@+id/tituloTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
+                android:layout_toRightOf="@+id/imageView"
+                android:text="@string/app_name"
+                android:textColor="#ffffff"
+                android:textSize="25sp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/nombreCompletoTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tituloTextView"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="4dp"
+                android:layout_toEndOf="@+id/imageView"
+                android:text="Bienvenido, Admin"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/sexoCardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="15dp"
+                app:cardPreventCornerOverlap="true">
+
+                <RelativeLayout
+                    android:layout_width="400dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_card"
+                    android:minHeight="100dp"
+                    android:padding="10dp">
+
+
+                    <ImageView
+                        android:id="@+id/sexoImage"
+                        android:layout_width="78dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="20dp"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        android:maxHeight="90dp"
+                        android:src="@drawable/sexo" />
+
+                    <TextView
+                        android:id="@+id/textViewSub1Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:layout_toRightOf="@+id/sexoImage"
+                        android:fontFamily="@font/abel"
+                        android:text="Sexo"
+                        android:textSize="20sp" />
+
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/estadosCardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="15dp"
+                app:cardPreventCornerOverlap="true">
+
+                <RelativeLayout
+                    android:layout_width="400dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_card"
+                    android:minHeight="100dp"
+                    android:padding="10dp">
+
+
+                    <ImageView
+                        android:id="@+id/estadosImage"
+                        android:layout_width="78dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="20dp"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        android:maxHeight="90dp"
+                        android:src="@drawable/estados" />
+
+                    <TextView
+                        android:id="@+id/textViewSub2Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:layout_toRightOf="@+id/estadosImage"
+                        android:fontFamily="@font/abel"
+                        android:text="Estados"
+                        android:textSize="20sp" />
+
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ciudadesCardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="15dp"
+                app:cardPreventCornerOverlap="true">
+
+                <RelativeLayout
+                    android:layout_width="400dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background_card"
+                    android:minHeight="100dp"
+                    android:padding="10dp">
+
+
+                    <ImageView
+                        android:id="@+id/ciudadImage"
+                        android:layout_width="78dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="20dp"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        android:maxHeight="90dp"
+                        android:src="@drawable/ciudad" />
+
+                    <TextView
+                        android:id="@+id/textViewSub3Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:layout_toRightOf="@+id/ciudadImage"
+                        android:fontFamily="@font/abel"
+                        android:text="Ciudades"
+                        android:textSize="20sp" />
+
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+        </LinearLayout>
+
+
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+
+
+</LinearLayout>

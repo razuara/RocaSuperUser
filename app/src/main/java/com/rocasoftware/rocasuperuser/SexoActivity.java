@@ -1,39 +1,40 @@
 package com.rocasoftware.rocasuperuser;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
-import com.google.firebase.auth.FirebaseAuth;
+public class SexoActivity extends AppCompatActivity {
 
-public class CatalogosActivity extends AppCompatActivity {
-    CardView sexoCardView,estadosCardView,ciudadesCardView;
+
+    private Button registroButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_catalogos);
+        setContentView(R.layout.activity_sexo);
 
-        sexoCardView = findViewById(R.id.sexoCardView);
+        registroButton = findViewById(R.id.registroButton);
 
 
-
-        sexoCardView.setOnClickListener(new View.OnClickListener() {
+        registroButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CatalogosActivity.this,SexoActivity.class);
+                Intent intent = new Intent(SexoActivity.this,SexoRegistroActivity.class);
                 startActivity(intent);
                 finish();
             }
         });
+
+
     }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent intent = new Intent(CatalogosActivity.this,PrincipalActivity.class);
+        Intent intent = new Intent(SexoActivity.this,CatalogosActivity.class);
         startActivity(intent);
         finish();
     }

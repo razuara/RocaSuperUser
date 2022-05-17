@@ -76,7 +76,7 @@
                 android:id="@+id/catalogosCardView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 app:cardCornerRadius="15dp"
@@ -89,46 +89,32 @@
                     android:minHeight="100dp"
                     android:padding="10dp">
 
-                    <TextView
-                        android:id="@+id/textViewSub1Title"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentTop="true"
-                        android:fontFamily="@font/abel"
-                        android:paddingTop="10dp"
-                        android:text="Catalogos"
-                        android:textSize="20sp" />
-
-                    <TextView
-
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_below="@+id/textViewSub1Title"
-                        android:layout_marginTop="5dp"
-                        android:fontFamily="@font/abel"
-                        android:paddingTop="10dp"
-                        android:text="Configuracion de Catalogos de la App"
-                        android:textSize="15sp" />
 
                     <ImageView
-
-                        android:layout_width="wrap_content"
+                        android:id="@+id/catalogosImage"
+                        android:layout_width="78dp"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="20dp"
                         android:adjustViewBounds="true"
                         android:cropToPadding="true"
                         android:maxHeight="90dp"
                         android:src="@drawable/catalogos" />
 
+                    <TextView
+                        android:id="@+id/textViewSub1Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:layout_toRightOf="@+id/catalogosImage"
+                        android:fontFamily="@font/abel"
+                        android:text="Catalogos"
+                        android:textSize="20sp" />
+
+
                 </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
-
-
-
-
-
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/logoutCardView"
@@ -147,35 +133,28 @@
                     android:minHeight="100dp"
                     android:padding="10dp">
 
-                    <TextView
-                        android:id="@+id/textViewSub6Title"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentTop="true"
-                        android:fontFamily="@font/abel"
-                        android:paddingTop="10dp"
-                        android:text="Log Out"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_below="@+id/textViewSub6Title"
-                        android:layout_marginTop="5dp"
-                        android:fontFamily="@font/abel"
-                        android:paddingTop="10dp"
-                        android:text="Salir de la aplicación."
-                        android:textSize="15sp" />
 
                     <ImageView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/logoutImage"
+                        android:layout_width="78dp"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="20dp"
                         android:adjustViewBounds="true"
                         android:cropToPadding="true"
                         android:maxHeight="90dp"
                         android:src="@drawable/logout" />
+
+                    <TextView
+                        android:id="@+id/textViewSub2Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:layout_toRightOf="@+id/logoutImage"
+                        android:fontFamily="@font/abel"
+                        android:text="Salir"
+                        android:textSize="20sp" />
+
 
                 </RelativeLayout>
 

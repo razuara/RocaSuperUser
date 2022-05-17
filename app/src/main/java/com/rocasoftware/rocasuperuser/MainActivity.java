@@ -58,8 +58,6 @@ public class MainActivity extends AppCompatActivity {
                                 if (usuarioAdmin=="true")
                                 {
                                     Intent intent = new Intent(MainActivity.this,PrincipalActivity.class);
-                                    intent.putExtra("idUser",idUser);
-                                    intent.putExtra("usuarioAdmin",usuarioAdmin);
                                     startActivity(intent);
                                     finish();
                                 }
