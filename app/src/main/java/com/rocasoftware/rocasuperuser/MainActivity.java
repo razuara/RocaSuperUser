@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             if (snapshot.exists())
                             {
-                                String usuarioAdmin = snapshot.child("usuario").getValue().toString();
+                                String usuarioAdmin = snapshot.child("existe").getValue().toString();
                                 if (usuarioAdmin=="true")
                                 {
                                     Intent intent = new Intent(MainActivity.this,PrincipalActivity.class);

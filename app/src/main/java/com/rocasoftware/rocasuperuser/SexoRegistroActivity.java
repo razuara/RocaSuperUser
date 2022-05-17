@@ -52,32 +52,44 @@ public class SexoRegistroActivity extends AppCompatActivity {
 
         String nombre = nombreEditText.getText().toString().trim();
 
+
         if (nombre.isEmpty())
         {
             nombreEditText.setError("No puede estar vacio");
         }
         else
         {
-            mDatabase = FirebaseDatabase.getInstance().getReference("sexo").child(nombre);
-            mDatabase
-                    .addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if (snapshot.exists())
+            mDatabase.child("sexo").addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.exists())
+                    {
+                        Boolean existe= false;
+                        for (DataSnapshot ds: snapshot.getChildren())
+                        {
+                            String nombreVerificar = ds.child("nombre").getValue().toString();
+                            if (nombreVerificar.equals(nombre))
                             {
-                                nombreEditText.setError("Este valor ya existe");
-                            }
-                            else
-                            {
-                                registrar(nombre);
+                                existe = true;
                             }
                         }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
+                        if (existe)
+                        {
+                            nombreEditText.setError("Ya Existe");
                         }
-                    });
+                        else
+                        {
+                            registrar(nombre);
+                        }
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
         }
 
 
@@ -86,22 +98,29 @@ public class SexoRegistroActivity extends AppCompatActivity {
 
     private void registrar(String nombre)
     {
-
+        registrarButton.setClickable(false);
+        registrarButton.setText("Registrando...");
         Map<String,Object> map = new HashMap<>();
-        map.put("existe","true");
+        map.put("nombre",nombre);
 
-        mDatabase.child(nombre)
+        mDatabase
+                .child("sexo")
+                .push()
                 .setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful())
                         {
+                            registrarButton.setClickable(true);
+                            registrarButton.setText("Registrar");
                             Intent intent = new Intent(SexoRegistroActivity.this,SexoActivity.class);
                             startActivity(intent);
                             finish();
                         }
                         else
                         {
+                            registrarButton.setClickable(true);
+                            registrarButton.setText("Registrar");
                             Toast.makeText(SexoRegistroActivity.this, "Fallo en registrarse", Toast.LENGTH_SHORT).show();
                         }
                     }

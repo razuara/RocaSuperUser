@@ -110,7 +110,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                     if (snapshot.exists())
                                     {
-                                        String usuarioAdmin = snapshot.child("usuario").getValue().toString();
+                                        String usuarioAdmin = snapshot.child("existe").getValue().toString();
 
                                         if (usuarioAdmin=="true")
                                         {
