@@ -22,7 +22,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SexoRegistroActivity extends AppCompatActivity {
+public class EstadoRegistroActivity extends AppCompatActivity {
+
     private EditText nombreEditText;
     private Button registrarButton;
 
@@ -31,7 +32,7 @@ public class SexoRegistroActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sexo_registro);
+        setContentView(R.layout.activity_estado_registro);
 
         nombreEditText = findViewById(R.id.nombreEditText);
         registrarButton = findViewById(R.id.registrarButton);
@@ -41,7 +42,8 @@ public class SexoRegistroActivity extends AppCompatActivity {
 
         registrarButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 validar();
             }
         });
@@ -49,7 +51,6 @@ public class SexoRegistroActivity extends AppCompatActivity {
 
     private void validar()
     {
-
         String nombre = nombreEditText.getText().toString().trim();
 
 
@@ -59,7 +60,7 @@ public class SexoRegistroActivity extends AppCompatActivity {
         }
         else
         {
-            mDatabase.child("sexo").addListenerForSingleValueEvent(new ValueEventListener() {
+            mDatabase.child("estados").addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     if (snapshot.exists())
@@ -95,9 +96,6 @@ public class SexoRegistroActivity extends AppCompatActivity {
             });
 
         }
-
-
-
     }
 
     private void registrar(String nombre)
@@ -108,7 +106,7 @@ public class SexoRegistroActivity extends AppCompatActivity {
         map.put("nombre",nombre);
 
         mDatabase
-                .child("sexo")
+                .child("estados")
                 .push()
                 .setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -117,7 +115,7 @@ public class SexoRegistroActivity extends AppCompatActivity {
                         {
                             registrarButton.setClickable(true);
                             registrarButton.setText("Registrar");
-                            Intent intent = new Intent(SexoRegistroActivity.this,SexoActivity.class);
+                            Intent intent = new Intent(EstadoRegistroActivity.this,EstadosActivity.class);
                             startActivity(intent);
                             finish();
                         }
@@ -125,18 +123,9 @@ public class SexoRegistroActivity extends AppCompatActivity {
                         {
                             registrarButton.setClickable(true);
                             registrarButton.setText("Registrar");
-                            Toast.makeText(SexoRegistroActivity.this, "Fallo en registrarse", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(EstadoRegistroActivity.this, "Fallo en registrarse", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
-    }
-
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Intent intent = new Intent(SexoRegistroActivity.this,SexoActivity.class);
-        startActivity(intent);
-        finish();
     }
 }

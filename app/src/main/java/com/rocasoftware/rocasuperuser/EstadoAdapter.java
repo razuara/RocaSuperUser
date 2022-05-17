@@ -12,23 +12,22 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
-public class SexoAdapter extends FirebaseRecyclerAdapter<SexoModel,SexoAdapter.myViewHolder>
+public class EstadoAdapter extends FirebaseRecyclerAdapter<EstadoModel,EstadoAdapter.myViewHolder>
 {
-
-    public SexoAdapter(@NonNull FirebaseRecyclerOptions<SexoModel> options) {
+    public EstadoAdapter(@NonNull FirebaseRecyclerOptions<EstadoModel> options) {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull myViewHolder holder, int position, @NonNull SexoModel model) {
+    protected void onBindViewHolder(@NonNull EstadoAdapter.myViewHolder holder, int position, @NonNull EstadoModel model) {
         holder.nombre.setText(model.getNombre());
     }
 
     @NonNull
     @Override
-    public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.sexo_item,parent,false);
-        return new myViewHolder(view);
+    public EstadoAdapter.myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.estado_item,parent,false);
+        return new EstadoAdapter.myViewHolder(view);
     }
 
     class myViewHolder extends RecyclerView.ViewHolder
@@ -44,16 +43,15 @@ public class SexoAdapter extends FirebaseRecyclerAdapter<SexoModel,SexoAdapter.m
                 @Override
                 public void onClick(View view) {
 
-                    //String idConductor = email.getText().toString();
+
                     int position = getAdapterPosition();
-                    String idSexo = getRef(position).getKey();
-                    Intent intent = new Intent(itemView.getContext(), SexoEditarActivity.class);
-                    intent.putExtra("idSexo",idSexo);
+                    String idEstado = getRef(position).getKey();
+                    Intent intent = new Intent(itemView.getContext(), EstadoEditarActivity.class);
+                    intent.putExtra("idEstado",idEstado);
                     itemView.getContext().startActivity(intent);
                 }
             });
 
         }
     }
-
 }

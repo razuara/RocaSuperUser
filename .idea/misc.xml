@@ -14,12 +14,16 @@
         <entry key="..\:/Users/Razuara/AndroidStudioProjects/RocaSuperUser/app/src/main/res/drawable/background_edittext.xml" value="0.197" />
         <entry key="..\:/Users/Razuara/AndroidStudioProjects/RocaSuperUser/app/src/main/res/drawable/background_login_btn.xml" value="0.197" />
         <entry key="..\:/Users/Razuara/AndroidStudioProjects/RocaSuperUser/app/src/main/res/layout/activity_catalogos.xml" value="0.33" />
+        <entry key="..\:/Users/Razuara/AndroidStudioProjects/RocaSuperUser/app/src/main/res/layout/activity_estado_editar.xml" value="0.21014492753623187" />
+        <entry key="..\:/Users/Razuara/AndroidStudioProjects/RocaSuperUser/app/src/main/res/layout/activity_estado_registro.xml" value="0.2018743667679838" />
+        <entry key="..\:/Users/Razuara/AndroidStudioProjects/RocaSuperUser/app/src/main/res/layout/activity_estados.xml" value="0.2018743667679838" />
         <entry key="..\:/Users/Razuara/AndroidStudioProjects/RocaSuperUser/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/Users/Razuara/AndroidStudioProjects/RocaSuperUser/app/src/main/res/layout/activity_main.xml" value="0.2018743667679838" />
         <entry key="..\:/Users/Razuara/AndroidStudioProjects/RocaSuperUser/app/src/main/res/layout/activity_principal.xml" value="0.5" />
         <entry key="..\:/Users/Razuara/AndroidStudioProjects/RocaSuperUser/app/src/main/res/layout/activity_sexo.xml" value="0.5" />
         <entry key="..\:/Users/Razuara/AndroidStudioProjects/RocaSuperUser/app/src/main/res/layout/activity_sexo_editar.xml" value="0.2018743667679838" />
         <entry key="..\:/Users/Razuara/AndroidStudioProjects/RocaSuperUser/app/src/main/res/layout/activity_sexo_registro.xml" value="0.5" />
+        <entry key="..\:/Users/Razuara/AndroidStudioProjects/RocaSuperUser/app/src/main/res/layout/estado_item.xml" value="0.20820668693009117" />
         <entry key="..\:/Users/Razuara/AndroidStudioProjects/RocaSuperUser/app/src/main/res/layout/sexo_item.xml" value="0.20871327254305977" />
       </map>
     </option>
